@@ -53,7 +53,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-xl">
                                 <div class="dropdown-menu-inner">
-                                    <a href="https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html" class="media d-flex align-items-center">
+                                    <a href="./pageComponents.php" class="media d-flex align-items-center">
                                         <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                                             <i class="ni ni-spaceship"></i>
                                         </div>
@@ -83,12 +83,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item ">
-                            <a href="./components.php" class="nav-link">
-                                <i class="ni ni-collection d-lg-none"></i>
-                                <span class="nav-link-inner--text">Components</span>
-                            </a>
-                        </li>
+
                         <li class="nav-item ">
                             <a href="./pageAdd.php" class="nav-link">
                                 <i class="ni ni-fat-add d-lg-none"></i>
