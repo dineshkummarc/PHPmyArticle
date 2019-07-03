@@ -34,13 +34,13 @@
                     <div class=" mt-4 pb-4">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" name="title" placeholder="Regular" class="form-control">
+                            <input type="text" id="title" name="title" placeholder="Title" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="editor">Description</label>
-                            <textarea name="content" id="editor"></textarea>
+                            <label for="description">Description</label>
+                            <textarea placeholder="Desciption" name="description" id="description"></textarea>
                         </div>
-
+                        <button class="btn btn-1 btn-outline-primary" id="create" type="button">Create</button>
                     </div>
 
                 </div>
@@ -51,13 +51,44 @@
 
 
     <script>
+        var myEditor;
         ClassicEditor
-            .create(document.querySelector('#editor'))
+            .create(document.querySelector('#description'))
+            .then(editor => {
+                // console.log('Editor was initialized', editor);
+                myEditor = editor;
+            })
             .catch(error => {
                 console.error(error);
             });
     </script>
 </main>
+
+
+<button type="button" class="btn btn-block btn-warning mb-3" style="display: none" data-toggle="modal" data-target="#add">open</button>
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content bg-gradient-danger">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="py-3 text-center">
+                    <i class="ni ni-bell-55 ni-3x"></i>
+                    <h4 class="heading mt-4">Post created</h4>
+                    <p>Your data successful added</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php
 include('footer.php')
 ?>

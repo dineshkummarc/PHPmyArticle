@@ -161,3 +161,33 @@ $(document).ready(function() {
         event.preventDefault();
     });
  });   
+
+/***
+ * 
+ * 
+ * -------------
+ */
+ $(document).ready(function() {
+
+
+    $('#create').click(function() {
+
+        axios.post('./addedPosts.php', {
+                title: $('#title').val(),
+                description: myEditor.getData()
+            })
+            .then(function(response) {
+                if (response.data === 'success') {
+                    $('[data-target="#add"]').click().trigger('click'); // modal open
+                    myEditor.data.set(''); // set editor val
+                    $('#title').val(''); // set val input
+                } else {
+                    console.error('dont success')
+                }
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+    })
+
+})

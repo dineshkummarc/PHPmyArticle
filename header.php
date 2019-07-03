@@ -14,6 +14,8 @@
     <!-- Argon CSS -->
     <link type="text/css" href="./assets/css/argon.css?v=1.0.1" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
