@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<?php include("header.php"); ?>
+<?php
+include("header.php");
+include('classPost.php');
+?>
+
+<?php
+$post = new Post($db)
+
+?>
 
 <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
@@ -28,7 +36,8 @@
 
                 <?php
 
-                for ($i = 1; $i < 10; $i++) {
+                $i = 1;
+                foreach ($post->getPosts() as $post) {
 
                     if ($i % 2) {
 
@@ -43,18 +52,15 @@
                                             <polygon points="0,52 583,95 0,95" class="fill-default" />
                                             <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
                                         </svg>
-                                        <h4 class="display-3 font-weight-bold text-white">Design System</h4>
-                                        <p class="lead text-italic text-white">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens.</p>
+                                        <h4 class="display-3 font-weight-bold text-white"><?php echo $post['subtitle'] ?></h4>
+                                        <div class="lead text-italic text-white"> <?php echo $post['description'] ?> </div>
                                     </blockquote>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="pl-md-5 ">
-                                    <h2>Our customers</h2>
-                                    <p class="lead">Don't let your uses guess by attaching tooltips and popoves to any element. Just make sure you enable them first via JavaScript.</p>
-                                    <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-                                    <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-                                    <a href="#" class="font-weight-bold text-warning mt-5">A beautiful UI Kit for impactful websites</a>
+                                    <h2 class="display-2"><?php echo $post['title'] ?></h2>
+                                    <div class="lead"> <?php echo $post['content'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +75,10 @@
                                     </div>
                                     <div class="col-md-6 order-md-1">
                                         <div class="pr-md-5">
-                                            <h2>Awesome features</h2>
-                                            <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-                                            <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
+                                            <h2 class="display-2"><?php echo $post['title'] ?></h2>
+                                            <h3><?php echo $post['subtitle'] ?></h3>
+                                            <h6> <?php echo $post['description'] ?></h6>
+                                            <div class="lead"> <?php echo $post['content'] ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -82,6 +89,7 @@
 
                     <?php
                     } // end if
+                    $i++;
                 } // end for
                 ?>
 

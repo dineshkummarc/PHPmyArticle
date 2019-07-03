@@ -37,8 +37,16 @@
                             <input type="text" id="title" name="title" placeholder="Title" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="title">Subtitle</label>
+                            <input type="text" id="subtitle" name="subtitle" placeholder="subtitle" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea placeholder="Desciption" name="description" id="description"></textarea>
+                            <textarea type="text" placeholder="Desciption" class="form-control" rows="2" id="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Content</label>
+                            <textarea placeholder="content" name="content" id="content"></textarea>
                         </div>
                         <button class="btn btn-1 btn-primary" id="create" type="button">Create</button>
                     </div>
@@ -51,16 +59,12 @@
 
 
     <script>
-        var myEditor;
+        var myEditorContent;
+
         ClassicEditor
-            .create(document.querySelector('#description'))
-            .then(editor => {
-                // console.log('Editor was initialized', editor);
-                myEditor = editor;
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            .create(document.querySelector('#content'))
+            .then(editor => myEditorContent = editor)
+            .catch(error => console.error(error));
     </script>
 </main>
 

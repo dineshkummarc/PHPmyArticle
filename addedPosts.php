@@ -10,9 +10,11 @@ $input = json_decode($inputJSON, TRUE);
 
 $title = strip_tags($input['title']);
 $descriptions = $input['description'];
+$subtitle = $input['subtitle'];
+$content = $input['content'];
 
 // send to sql
-$isInsert = $post->addPost($title, $descriptions);
+$isInsert = $post->addPost($title,  $subtitle, $descriptions, $content);
 
 // response to client
 if ($isInsert) {

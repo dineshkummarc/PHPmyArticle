@@ -174,13 +174,18 @@ $(document).ready(function() {
 
         axios.post('./addedPosts.php', {
                 title: $('#title').val(),
-                description: myEditor.getData()
+                description: $('#description').val(),
+                subtitle: $('#subtitle').val(),
+                content:  myEditorContent.getData()
             })
             .then(function(response) {
                 if (response.data === 'success') {
                     $('[data-target="#add"]').click().trigger('click'); // modal open
-                    myEditor.data.set(''); // set editor val
-                    $('#title').val(''); // set val input
+                    // ОБНУЛЯЕМ
+                    myEditorContent.data.set('');
+                    $('#description').val(''); 
+                    $('#title').val(''); 
+                    $('#subtitle').val(''); 
                 } else {
                     console.error('dont success')
                 }
