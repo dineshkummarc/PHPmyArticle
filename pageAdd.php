@@ -40,7 +40,7 @@
                             <label for="description">Description</label>
                             <textarea placeholder="Desciption" name="description" id="description"></textarea>
                         </div>
-                        <button class="btn btn-1 btn-outline-primary" id="create" type="button">Create</button>
+                        <button class="btn btn-1 btn-primary" id="create" type="button">Create</button>
                     </div>
 
                 </div>

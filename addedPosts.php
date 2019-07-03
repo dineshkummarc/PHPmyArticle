@@ -1,5 +1,5 @@
 <?php
-include('post.php');
+include('classPost.php');
 
 // create instance
 $post = new Post($db);

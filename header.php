@@ -90,9 +90,15 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="./add.php" class="nav-link">
-                                <i class="ni ni-collection d-lg-none"></i>
+                            <a href="./pageAdd.php" class="nav-link">
+                                <i class="ni ni-fat-add d-lg-none"></i>
                                 <span class="nav-link-inner--text">Add Post</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="./pageArticles.php" class="nav-link">
+                                <i class="ni ni-fat-add d-lg-none"></i>
+                                <span class="nav-link-inner--text">Articles</span>
                             </a>
                         </li>
                     </ul>
