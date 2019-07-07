@@ -27,4 +27,11 @@ class Post
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
+
+    public function getSinglePost($slug)
+    {
+        $sql = "SELECT * FROM posts WHERE slug='$slug'";
+        $result = mysqli_query($this->db, $sql);
+        return $result;
+    }
 }

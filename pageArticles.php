@@ -59,7 +59,7 @@ $post = new Post($db)
                             </div>
                             <div class="col-md-6">
                                 <div class="pl-md-5 ">
-                                    <h2 class="display-2"><?php echo $post['title'] ?></h2>
+                                    <h2 class="display-2"><a href="<?php echo 'pageArticle.php?slug=' . $post['slug'] ?>"><?php echo $post['title'] ?> </a></h2>
                                     <div class="lead"> <?php echo $post['content'] ?></div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ $post = new Post($db)
                                     </div>
                                     <div class="col-md-6 order-md-1">
                                         <div class="pr-md-5">
-                                            <h2 class="display-2"><?php echo $post['title'] ?></h2>
+                                            <h2 class="display-2"> <a href="<?php echo 'pageArticle.php?slug=' . $post['slug'] ?>"><?php echo $post['title'] ?> </a> </h2>
                                             <h3><?php echo $post['subtitle'] ?></h3>
                                             <h6> <?php echo $post['description'] ?></h6>
                                             <div class="lead"> <?php echo $post['content'] ?></div>
