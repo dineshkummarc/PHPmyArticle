@@ -172,27 +172,84 @@ $(document).ready(function() {
 
     $('#create').click(function() {
 
-        axios.post('./addedPosts.php', {
-                title: $('#title').val(),
-                description: $('#description').val(),
-                subtitle: $('#subtitle').val(),
-                content:  myEditorContent.getData()
+        
+        let data = {
+            title : $('#title').val(),
+            description : $('#description').val(),
+            subtitle : $('#subtitle').val(),
+            content :  myEditorContent.getData()
+        }
+        data = JSON.stringify(data)
+
+        let formData = new FormData();
+        let imagefile = document.getElementById('imageDownload').files[0]
+        
+        formData.append('img', imagefile);
+        formData.append('data', data);
+
+        axios.post('./addedPosts.php', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+            .then(function (response) {
+
+            if (response.data === 'success') {
+                $('[data-target="#add"]').click().trigger('click'); // modal open
+                // ОБНУЛЯЕМ
+                myEditorContent.data.set('');
+                $('#description').val(''); 
+                $('#title').val(''); 
+                $('#subtitle').val(''); 
+                $('#imageDownload').val(''); 
+
+                console.log(data)
+
+            } else {
+                console.error('dont success')
+            }
+
+
             })
-            .then(function(response) {
-                if (response.data === 'success') {
-                    $('[data-target="#add"]').click().trigger('click'); // modal open
-                    // ОБНУЛЯЕМ
-                    myEditorContent.data.set('');
-                    $('#description').val(''); 
-                    $('#title').val(''); 
-                    $('#subtitle').val(''); 
-                } else {
-                    console.error('dont success')
-                }
-            })
-            .catch(function(error) {
-                console.error(error);
+            .catch(function (err) {
+            console.error(err)
             });
+
+
+
+
+
+
+
+
+
+
+        // axios.post('./addedPosts.php', {
+        //         title,
+        //         description,
+        //         subtitle,
+        //         content
+        //     })
+        //     .then(function(response) {
+        //         if (response.data === 'success') {
+        //             $('[data-target="#add"]').click().trigger('click'); // modal open
+        //             // ОБНУЛЯЕМ
+        //             myEditorContent.data.set('');
+        //             $('#description').val(''); 
+        //             $('#title').val(''); 
+        //             $('#subtitle').val(''); 
+        //         } else {
+        //             console.error('dont success')
+        //         }
+        //     })
+        //     .catch(function(error) {
+        //         console.error(error);
+        //     });
+
+
+
+
+
     })
 
 })

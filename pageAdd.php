@@ -48,6 +48,26 @@
                             <label for="content">Content</label>
                             <textarea placeholder="content" name="content" id="content"></textarea>
                         </div>
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="content">Image</label>
+                            <div class="input-group mb-4">
+                                <label class="fileContainer" style="border: solid 0.1px;padding: 4px 20px;margin-bottom: 0px;">
+                                    Click here to trigger the file uploader!
+                                    <input type="file" id="imageDownload" style="visibility: hidden;" />
+                                </label>
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-upload"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <button class="btn btn-1 btn-primary" id="create" type="button">Create</button>
                     </div>
 
@@ -55,6 +75,7 @@
             </div>
         </div>
     </section>
+
 
 
 

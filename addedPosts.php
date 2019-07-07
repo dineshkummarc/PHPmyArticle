@@ -1,20 +1,20 @@
 <?php
 include('classPost.php');
+include('./functions/functions.php');
 
 // create instance
 $post = new Post($db);
 
-// get data and convert them
-$inputJSON = file_get_contents('php://input');
-$input = json_decode($inputJSON, TRUE);
+$_POST = json_decode($_POST['data'], true);
 
-$title = strip_tags($input['title']);
-$descriptions = $input['description'];
-$subtitle = $input['subtitle'];
-$content = $input['content'];
+$title = strip_tags($_POST['title']);
+$descriptions = $_POST['description'];
+$subtitle = $_POST['subtitle'];
+$content = $_POST['content'];
+$imgName = uploadImage();
 
 // send to sql
-$isInsert = $post->addPost($title,  $subtitle, $descriptions, $content);
+$isInsert = $post->addPost($title,  $subtitle, $descriptions, $content, $imgName);
 
 // response to client
 if ($isInsert) {
