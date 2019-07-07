@@ -101,7 +101,7 @@
                         <li class="nav-item">
                             <a class="nav-link nav-link-icon" href="mailto:kirsanov.yegor@gmail.com" data-toggle="tooltip" title="Send Letter">
                                 <i class="fa fa-google"></i>
-                                <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                                <span class="nav-link-inner--text d-lg-none">Gmail</span>
                             </a>
                         </li>
 
