@@ -53,7 +53,7 @@ $post = new Post($db)
                                             <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
                                         </svg>
                                         <h4 class="display-3 font-weight-bold text-white"><?php echo $post['subtitle'] ?></h4>
-                                        <div class="lead text-italic text-white"> <?php echo $post['description'] ?> </div>
+                                        <div class="lead text-italic text-white"> <?php echo $post['description'] ?> <small> <i> <?php echo $post['created_at'] ?> </i> </small> </div>
                                     </blockquote>
                                 </div>
                             </div>

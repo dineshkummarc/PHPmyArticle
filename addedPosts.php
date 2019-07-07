@@ -11,10 +11,11 @@ $title = strip_tags($_POST['title']);
 $descriptions = $_POST['description'];
 $subtitle = $_POST['subtitle'];
 $content = $_POST['content'];
-$imgName = uploadImage();
+$imgName = uploadImage(); // from functions
+$slug = createSlug($title); // from functions
 
 // send to sql
-$isInsert = $post->addPost($title,  $subtitle, $descriptions, $content, $imgName);
+$isInsert = $post->addPost($title,  $subtitle, $descriptions, $content, $imgName,  $slug);
 
 // response to client
 if ($isInsert) {

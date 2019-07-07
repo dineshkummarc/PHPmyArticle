@@ -8,11 +8,12 @@ class Post
     {
         $this->db = $db;
     }
-    public function addPost($title, $subtitle, $description, $content, $imgName)
+    public function addPost($title, $subtitle, $description, $content, $imgName, $slug)
     {
+        $data = date('Y-m-d');
         $sql = "INSERT INTO 
-                posts(title, subtitle, description, content, imgName)
-                VALUES('$title', '$subtitle', '$description', '$content', '$imgName')";
+                posts(title, subtitle, description, content, imgName, created_at, slug)
+                VALUES('$title', '$subtitle', '$description', '$content', '$imgName', '$data', '$slug')";
 
         $result = mysqli_query($this->db, $sql);
         if ($result) {
