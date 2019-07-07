@@ -46,7 +46,7 @@ $post = new Post($db)
                         <div class="row row-grid align-items-center">
                             <div class="col-md-6">
                                 <div class="card bg-default shadow border-0">
-                                    <img src="../assets/img/theme/img-1-1200x1000.jpg" class="card-img-top">
+                                    <img src="<?php echo 'images/' . $post['imgName'] ?>" class="card-img-top">
                                     <blockquote class="card-blockquote">
                                         <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
                                             <polygon points="0,52 583,95 0,95" class="fill-default" />
@@ -71,7 +71,7 @@ $post = new Post($db)
                             <div class="container">
                                 <div class="row row-grid align-items-center">
                                     <div class="col-md-6 order-md-2">
-                                        <img src="../assets/img/theme/promo-1.png" class="img-fluid floating">
+                                        <img src="<?php echo 'images/' . $post['imgName'] ?>" class="img-fluid floating">
                                     </div>
                                     <div class="col-md-6 order-md-1">
                                         <div class="pr-md-5">
