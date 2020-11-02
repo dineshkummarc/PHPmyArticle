@@ -1,4 +1,5 @@
-# PHPmyCMS
+# PHPmyArticle
+Another portal with PHP, MySQL to create and Store Article Management using new and intutive Design.
 
 # Demo
 Blog Management
